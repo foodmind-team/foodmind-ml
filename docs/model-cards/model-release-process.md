@@ -61,6 +61,8 @@ The model-package schema should require:
 
 - Baseline comparison complete
 - Evaluation metrics recorded
+- Lead-candidate and ordered top-three behaviour recorded
+- Personal, Exploratory, and Group-inspired coverage reviewed
 - Cold-start behaviour tested
 - Leakage checks passed
 - Limitations reviewed

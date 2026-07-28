@@ -98,7 +98,8 @@ FoodMind uses a feature-level hybrid recommendation design:
 3. ItemCF produces a similar-meal signal when interaction data is sufficient.
 4. Logistic Regression combines collaborative, preference, context, history, and group features.
 5. Runtime code estimates acceptance probability.
-6. The Recommendation Agent explains verified reason codes; the score is not the explanation.
+6. Runtime returns a stable ordered candidate set with the lead candidate first.
+7. The Recommendation Agent explains verified reason codes; the score is not the explanation.
 
 Hard constraints must never be replaced by model predictions.
 
@@ -170,8 +171,14 @@ Report:
 - Cold-start behaviour
 - Fallback rate
 - Known limitations
+- Top-1 lead-choice quality and top-3 ranking quality
+- Personal, Exploratory, and Group-inspired segment coverage
 
 Evaluation must be reproducible from a configuration and an immutable dataset snapshot.
+
+The client may display one lead recommendation at a time, but offline
+evaluation must assess the full ordered candidate set rather than only the
+visible card.
 
 ## Model Package
 
