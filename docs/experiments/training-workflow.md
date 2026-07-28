@@ -140,8 +140,15 @@ Record:
 - Cold-start segments
 - Calibration or probability distribution
 - Error analysis
+- Top-1 metrics for the lead recommendation
+- Top-3 ranking/coverage metrics for the ordered candidate set
+- Personal, Exploratory, and Group-inspired cohort coverage
 
 Do not select a release using the final test set repeatedly.
+
+The product spotlights one candidate initially, but the model contract still
+supports up to three intentionally different candidates. Evaluation must
+therefore report both lead-choice performance and ordered-set quality.
 
 ## 10. Review Explainability
 
