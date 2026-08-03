@@ -1,0 +1,53 @@
+{
+  "train_rows": 48379,
+  "validation_rows": 266,
+  "test_rows": 270,
+  "selected_users": 1200,
+  "selected_dishes": 1200,
+  "majority_class": 1,
+  "majority_validation": {
+    "accuracy": 0.9924812030075187,
+    "precision": 0.9924812030075187,
+    "recall": 1.0,
+    "f1": 0.9962264150943396,
+    "roc_auc": 0.5,
+    "tp": 264,
+    "tn": 0,
+    "fp": 2,
+    "fn": 0
+  },
+  "hybrid_lr_validation": {
+    "accuracy": 0.9924812030075187,
+    "precision": 0.9924812030075187,
+    "recall": 1.0,
+    "f1": 0.9962264150943396,
+    "roc_auc": 0.5492424242424242,
+    "tp": 264,
+    "tn": 0,
+    "fp": 2,
+    "fn": 0
+  },
+  "hybrid_lr_test": {
+    "accuracy": 0.9814814814814815,
+    "precision": 0.9814814814814815,
+    "recall": 1.0,
+    "f1": 0.9906542056074767,
+    "roc_auc": 0.8030188679245283,
+    "tp": 265,
+    "tn": 0,
+    "fp": 5,
+    "fn": 0
+  },
+  "feature_names": [
+    "user_cf_score",
+    "user_cf_available",
+    "item_cf_score",
+    "item_cf_available",
+    "dish_avg_rating",
+    "dish_rating_count_log",
+    "user_avg_rating",
+    "is_spicy",
+    "is_sweet",
+    "is_main_dish"
+  ]
+}

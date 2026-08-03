@@ -1,0 +1,8 @@
+{
+  "recipes": 231637,
+  "dishes": 229370,
+  "interactions": 538139,
+  "train": 503917,
+  "validation": 17111,
+  "test": 17111
+}
