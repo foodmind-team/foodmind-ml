@@ -1,0 +1,9 @@
+Dataset/
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*.csv
+artifacts/candidate/
+*.pkl
+*.npz
+__pycache__/
+*.pyc
