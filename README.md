@@ -49,39 +49,20 @@ The handoff is a versioned model-package contract, not copied source code.
 
 ```text
 foodmind-ml/
-├── .github/workflows/             # Reproducibility and validation workflows
-├── artifacts/
-│   ├── candidate/                 # Local/candidate package outputs
-│   ├── released/                  # Release metadata, not large binaries
-│   └── manifests/
-├── configs/
-│   ├── data/
-│   ├── training/
-│   └── evaluation/
-├── contracts/model-package/
-│   ├── schema/
-│   └── examples/
 ├── data/
-│   ├── raw/
-│   ├── external/
-│   ├── interim/
 │   └── processed/
 ├── docs/
 │   ├── experiments/
 │   └── model-cards/
-├── notebooks/
-│   ├── exploration/
-│   └── experiments/
 ├── reports/
-│   ├── figures/
 │   └── metrics/
 ├── scripts/
 ├── src/foodmind_ml/
-│   ├── data/
-│   ├── features/
-│   ├── collaborative/
-│   ├── training/
-│   ├── evaluation/
+│   ├── __init__.py
+│   └── pipeline.py
+└── tests/
+    └── unit/
+```
 │   └── packaging/
 └── tests/
     ├── unit/
