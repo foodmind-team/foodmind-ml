@@ -1,61 +1,61 @@
 user_id,dish_id,dish_name,acceptance_probability,user_cf_score,item_cf_score
-U101034,D107656,hot pepper jelly,0.9749,1.0,1.0
-U101034,D214044,traditional tamales pork,0.974,1.0,0.9799
-U101034,D209252,the best creole cajun seasoning mix,0.9738,1.0,0.9782
-U1015482,D214044,traditional tamales pork,0.9694,1.0,0.9722
-U1015482,D107656,hot pepper jelly,0.9692,1.0,0.9791
-U1015482,D000331,2 handed kitchen sink tomato sandwich,0.969,1.0,0.9788
+U101034,D107656,hot pepper jelly,0.9753,1.0,1.0
+U101034,D214044,traditional tamales pork,0.9745,1.0,0.9799
+U101034,D171057,rescued turkey stock,0.9742,1.0,0.9944
+U1015482,D214044,traditional tamales pork,0.9695,1.0,0.9722
+U1015482,D107656,hot pepper jelly,0.9693,1.0,0.9791
+U1015482,D000331,2 handed kitchen sink tomato sandwich,0.9692,1.0,0.9788
 U102602,D214044,traditional tamales pork,0.977,1.0,0.9953
+U102602,D107656,hot pepper jelly,0.9768,1.0,1.0
 U102602,D209252,the best creole cajun seasoning mix,0.9768,1.0,0.9944
-U102602,D107656,hot pepper jelly,0.9767,1.0,1.0
-U104472,D145836,olive garden zuppa toscana,0.9764,1.0,1.0
-U104472,D209252,the best creole cajun seasoning mix,0.9764,1.0,0.9881
-U104472,D148652,our daily bread in a crock weekly make and bake rustic bread,0.9763,1.0,1.0
-U1052873,D107656,hot pepper jelly,0.9711,1.0,0.9846
-U1052873,D092024,go go garlic bread,0.9701,1.0,0.9862
-U1052873,D183051,shirley s perfect steamed corn on the cob every time,0.9698,1.0,0.978
-U110135,D209252,the best creole cajun seasoning mix,0.9717,1.0,0.9663
-U110135,D214044,traditional tamales pork,0.9714,1.0,0.9613
-U110135,D145836,olive garden zuppa toscana,0.9711,1.0,0.9705
-U111342,D214044,traditional tamales pork,0.9742,1.0,0.9871
-U111342,D000331,2 handed kitchen sink tomato sandwich,0.974,1.0,0.9947
-U111342,D209252,the best creole cajun seasoning mix,0.9738,1.0,0.9831
-U1133190,D209252,the best creole cajun seasoning mix,0.9728,1.0,0.9813
+U104472,D145836,olive garden zuppa toscana,0.9767,1.0,1.0
+U104472,D148652,our daily bread in a crock weekly make and bake rustic bread,0.9766,1.0,1.0
+U104472,D214044,traditional tamales pork,0.9765,1.0,0.9828
+U1052873,D107656,hot pepper jelly,0.9713,1.0,0.9846
+U1052873,D092024,go go garlic bread,0.9703,1.0,0.9862
+U1052873,D183051,shirley s perfect steamed corn on the cob every time,0.9699,1.0,0.978
+U110135,D214044,traditional tamales pork,0.9712,1.0,0.9613
+U110135,D209252,the best creole cajun seasoning mix,0.9711,1.0,0.9663
+U110135,D145836,olive garden zuppa toscana,0.9709,1.0,0.9705
+U111342,D214044,traditional tamales pork,0.9743,1.0,0.9871
+U111342,D000331,2 handed kitchen sink tomato sandwich,0.9741,1.0,0.9947
+U111342,D075624,easy low fat oven roasted peppered potato wedges,0.9739,0.9932,1.0
+U1133190,D209252,the best creole cajun seasoning mix,0.9726,1.0,0.9813
 U1133190,D214882,tsr version of carrabba s bread dipping spice by todd wilbur,0.9715,0.995,0.9785
 U1133190,D000331,2 handed kitchen sink tomato sandwich,0.9712,1.0,0.9713
-U113941,D214044,traditional tamales pork,0.9775,1.0,1.0
-U113941,D209252,the best creole cajun seasoning mix,0.9774,1.0,1.0
-U113941,D107656,hot pepper jelly,0.9769,1.0,1.0
-U11461,D214044,traditional tamales pork,0.9758,1.0,0.991
-U11461,D209252,the best creole cajun seasoning mix,0.9755,1.0,0.989
-U11461,D107656,hot pepper jelly,0.9753,1.0,0.9931
-U115758,D214044,traditional tamales pork,0.9752,1.0,1.0
-U115758,D209252,the best creole cajun seasoning mix,0.9742,1.0,0.987
-U115758,D116395,kittencal s balsamic vinaigrette,0.9741,1.0,0.9959
-U116401,D209252,the best creole cajun seasoning mix,0.9773,1.0,1.0
-U116401,D000331,2 handed kitchen sink tomato sandwich,0.9767,1.0,1.0
-U116401,D116395,kittencal s balsamic vinaigrette,0.9767,1.0,1.0
-U1179225,D209252,the best creole cajun seasoning mix,0.9716,1.0,0.9748
-U1179225,D148652,our daily bread in a crock weekly make and bake rustic bread,0.9713,0.9897,0.9925
-U1179225,D017632,basic sourdough bread,0.9711,1.0,0.9917
-U118268,D107656,hot pepper jelly,0.9717,1.0,0.9893
-U118268,D214044,traditional tamales pork,0.9716,1.0,0.9793
-U118268,D209252,the best creole cajun seasoning mix,0.9712,1.0,0.9753
-U120566,D148652,our daily bread in a crock weekly make and bake rustic bread,0.9733,1.0,1.0
-U120566,D149122,oven cooked bacon with black pepper and brown sugar,0.9732,1.0,0.9926
-U120566,D116395,kittencal s balsamic vinaigrette,0.973,1.0,0.9923
-U1206102,D209252,the best creole cajun seasoning mix,0.9702,1.0,0.9531
-U1206102,D224767,whole wheat hamburger and hot dog buns bread machine,0.9694,1.0,0.9608
-U1206102,D214044,traditional tamales pork,0.9694,1.0,0.9432
-U121690,D116395,kittencal s balsamic vinaigrette,0.975,1.0,0.99
-U121690,D000331,2 handed kitchen sink tomato sandwich,0.9747,1.0,0.9856
-U121690,D224767,whole wheat hamburger and hot dog buns bread machine,0.9747,1.0,0.9919
-U124416,D214044,traditional tamales pork,0.9657,1.0,0.9257
-U124416,D107656,hot pepper jelly,0.9657,1.0,0.9341
-U124416,D145836,olive garden zuppa toscana,0.9656,1.0,0.9378
-U125773,D214044,traditional tamales pork,0.9764,1.0,1.0
-U125773,D149122,oven cooked bacon with black pepper and brown sugar,0.9755,0.995,1.0
-U125773,D224767,whole wheat hamburger and hot dog buns bread machine,0.9751,1.0,1.0
-U125808,D214044,traditional tamales pork,0.9743,1.0,1.0
-U125808,D209252,the best creole cajun seasoning mix,0.9729,1.0,0.9835
-U125808,D149122,oven cooked bacon with black pepper and brown sugar,0.9729,0.9904,0.9964
+U113941,D214044,traditional tamales pork,0.9776,1.0,1.0
+U113941,D209252,the best creole cajun seasoning mix,0.9773,1.0,1.0
+U113941,D107656,hot pepper jelly,0.9771,1.0,1.0
+U11461,D214044,traditional tamales pork,0.9762,1.0,0.991
+U11461,D107656,hot pepper jelly,0.9758,1.0,0.9931
+U11461,D214882,tsr version of carrabba s bread dipping spice by todd wilbur,0.9757,0.9913,1.0
+U115758,D214044,traditional tamales pork,0.9755,1.0,1.0
+U115758,D116395,kittencal s balsamic vinaigrette,0.9744,1.0,0.9959
+U115758,D127154,make your own boursin cheese paula deen,0.9742,1.0,1.0
+U116401,D209252,the best creole cajun seasoning mix,0.9769,1.0,1.0
+U116401,D000331,2 handed kitchen sink tomato sandwich,0.9765,1.0,1.0
+U116401,D116395,kittencal s balsamic vinaigrette,0.9764,1.0,1.0
+U1179225,D209252,the best creole cajun seasoning mix,0.9715,1.0,0.9748
+U1179225,D148652,our daily bread in a crock weekly make and bake rustic bread,0.9714,0.9897,0.9925
+U1179225,D017632,basic sourdough bread,0.971,1.0,0.9917
+U118268,D107656,hot pepper jelly,0.9725,1.0,0.9893
+U118268,D214044,traditional tamales pork,0.9724,1.0,0.9793
+U118268,D000331,2 handed kitchen sink tomato sandwich,0.9718,1.0,0.9819
+U120566,D148652,our daily bread in a crock weekly make and bake rustic bread,0.9737,1.0,1.0
+U120566,D116395,kittencal s balsamic vinaigrette,0.9734,1.0,0.9923
+U120566,D145836,olive garden zuppa toscana,0.9732,1.0,0.9928
+U1206102,D209252,the best creole cajun seasoning mix,0.9701,1.0,0.9531
+U1206102,D214044,traditional tamales pork,0.9696,1.0,0.9432
+U1206102,D224767,whole wheat hamburger and hot dog buns bread machine,0.9693,1.0,0.9608
+U121690,D116395,kittencal s balsamic vinaigrette,0.9755,1.0,0.99
+U121690,D000331,2 handed kitchen sink tomato sandwich,0.9752,1.0,0.9856
+U121690,D183051,shirley s perfect steamed corn on the cob every time,0.9748,1.0,0.9884
+U124416,D214044,traditional tamales pork,0.9655,1.0,0.9257
+U124416,D107656,hot pepper jelly,0.9655,1.0,0.9341
+U124416,D145836,olive garden zuppa toscana,0.9654,1.0,0.9378
+U125773,D214044,traditional tamales pork,0.9763,1.0,1.0
+U125773,D149122,oven cooked bacon with black pepper and brown sugar,0.9754,0.995,1.0
+U125773,D127154,make your own boursin cheese paula deen,0.9748,0.9973,1.0
+U125808,D214044,traditional tamales pork,0.9744,1.0,1.0
+U125808,D000331,2 handed kitchen sink tomato sandwich,0.9728,1.0,0.9893
+U125808,D209252,the best creole cajun seasoning mix,0.9728,1.0,0.9835

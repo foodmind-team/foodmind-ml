@@ -1,0 +1,19 @@
+restaurant_id,restaurant_name,source_url,delivery_address,notes
+T003,Udon Don Bar,https://www.foodpanda.sg/restaurant/y6ri/udon-don-bar-create-way,1 Create Way Singapore 138602,matched_from_curated_targets
+T006,A Hot Hideout,https://www.foodpanda.sg/restaurant/cie6/a-hot-hideout-nus,Prince George's Park Residence Singapore,matched_from_curated_targets
+T007,Anna's x The Soup Spoon Union,https://www.foodpanda.sg/restaurant/tvcp/the-soup-spoon-union-nus-central-library,National University of Singapore Central Library Singapore,matched_nus_branch
+T014,Burger King,https://www.foodpanda.sg/restaurant/s6po/burger-king-r-oneatkentridge,1 Lower Kent Ridge Road Singapore 119082,matched_from_curated_targets
+T021,Ordinary Burgers,https://www.foodpanda.sg/restaurant/izfs/ordinary-burgers-lower-kent-ridge,1 Lower Kent Ridge Road Singapore 119082,matched_from_curated_targets
+T022,Poke Theory,https://www.foodpanda.sg/restaurant/w8ue/poke-theory-kent-ridge,1 Lower Kent Ridge Road Singapore 119082,matched_from_curated_targets
+T023,Polar Cafe,https://www.foodpanda.sg/restaurant/lzp0/polar-puffs-and-cakes-lower-kent-ridge,1 Lower Kent Ridge Road Singapore 119082,matched_brand_lower_kent_ridge
+T025,Stuff'd,https://www.foodpanda.sg/restaurant/xcjw/stuffd-oneatkentridge,1 Lower Kent Ridge Road Singapore 119082,matched_from_curated_targets
+T029,Xin Wang Hong Kong Cafe,https://www.foodpanda.sg/restaurant/v1fz/xin-wang-hong-kong-cafe-nuh-medical-centre,1 Lower Kent Ridge Road Singapore 119082,matched_from_curated_targets
+T002,Subway,https://www.foodpanda.sg/restaurant/y3gv/subway-nus-stephen-riady-centre,1 Create Way Singapore 138602,matched_nus_stephen_riady_centre
+T015,Crave Nasi Lemak,https://www.foodpanda.sg/restaurant/v8sv/crave-kent-ridge,1 Lower Kent Ridge Road Singapore 119082,matched_one_kent_ridge_area
+T016,Dabba Street,https://www.foodpanda.sg/restaurant/ce8v/dabba-street-oneatkentridge,1 Lower Kent Ridge Road Singapore 119082,matched_from_curated_targets
+T017,Delifrance,https://www.foodpanda.sg/restaurant/v2vb/delifrance-nuh-medical-centre,1 Lower Kent Ridge Road Singapore 119082,matched_one_kent_ridge_nuh_address
+T032,Crystal Jade Hong Kong Kitchen,https://www.foodpanda.sg/restaurant/v5pe/crystal-jade-hong-kong-kitchen-clementi-mall,3155 Commonwealth Avenue West Singapore 129588,matched_from_curated_targets
+T033,Soup Restaurant,https://www.foodpanda.sg/restaurant/v9vx/soup-restaurant-clementi-mall,3155 Commonwealth Avenue West Singapore 129588,matched_from_curated_targets
+T037,Sushi Express,https://www.foodpanda.sg/restaurant/aiud/sushi-express-the-clementi-mall,3155 Commonwealth Avenue West Singapore 129588,matched_from_curated_targets
+T038,Ha Jun,https://www.foodpanda.sg/restaurant/yhf9/ha-jun-korean-the-clementi-mall,3155 Commonwealth Avenue West Singapore 129588,matched_from_curated_targets
+T039,Ichiban Sushi,https://www.foodpanda.sg/restaurant/x2ae/ichiban-boshi-clementi-mall,3155 Commonwealth Avenue West Singapore 129588,name_variant_verify_before_use

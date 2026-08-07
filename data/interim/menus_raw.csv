@@ -1,0 +1,111 @@
+restaurant_id,restaurant_name,raw_menu_item_name,raw_price,raw_category,source_url,source_file,collected_at,notes
+T001,The Royals Bistro,Soup-of-the-day,6.0,starter_side,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Fried Chicken Wings,9.0,starter_side,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,6pc; combination of mid-joints and drumlets; sweet Thai chilli
+T001,The Royals Bistro,Chef's Special Crab Cakes,11.9,starter_side,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,2pc; prices subject to 9% GST
+T001,The Royals Bistro,Crispy Fries,6.0,starter_side,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Twister Fries,7.0,starter_side,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Garlic Bread,5.5,starter_side,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,4pc; prices subject to 9% GST
+T001,The Royals Bistro,Fried Samosas + Springrolls,7.0,starter_side,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,4pc each; prices subject to 9% GST
+T001,The Royals Bistro,Sweet Potato Fries,7.0,starter_side,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Truffle Fries,9.0,starter_side,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Tater Tots,6.0,starter_side,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Sauteed Prawn Salad,10.5,salad,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Avocado dressing; mango salsa; Japanese cucumbers
+T001,The Royals Bistro,Caesar Salad Smoked Salmon,10.5,salad,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Caesar Salad Grilled Chicken Thigh,10.5,salad,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Quinoa Salad,10.5,salad,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Capsicum; walnut; zucchini; sweet potato
+T001,The Royals Bistro,Pan-Fried Salmon,16.0,main,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Lemon butter sauce; mash; salad
+T001,The Royals Bistro,Braised Lamb Shank,24.0,main,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Mash; salad
+T001,The Royals Bistro,Fish & Chips,16.0,main,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Halibut
+T001,The Royals Bistro,Grilled Chicken Chop,13.5,main,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Mash; salad; black pepper or brown sauce
+T001,The Royals Bistro,Pan Seared Barramundi,16.8,main,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Spicy black bean sauce; mash; salad
+T001,The Royals Bistro,Beef Shepherd's Pie,8.5,main,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Served with salad
+T001,The Royals Bistro,Chicken Shepherd's Pie,8.5,main,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Served with salad
+T001,The Royals Bistro,Prawn & Mushroom Linguine,14.3,pasta,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Spicy; +1.50 for extra pasta
+T001,The Royals Bistro,Salmon Spinach Linguine,14.3,pasta,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Cream sauce; +1.50 for extra pasta
+T001,The Royals Bistro,Linguine with Meatballs in Tomato Sauce,12.9,pasta,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Meatballs contain beef and chicken; +1.50 for extra pasta
+T001,The Royals Bistro,Basic Chicken Linguine,12.9,pasta,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Minced chicken; basil cream sauce; slightly spicy; +1.50 for extra pasta
+T001,The Royals Bistro,Sauteed Wild Mushroom Linguine,12.3,pasta,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Spicy; contains garlic; +1.50 for extra pasta
+T001,The Royals Bistro,Linguine with Chicken in Cream Sauce,13.0,pasta,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,+1.50 for extra pasta
+T001,The Royals Bistro,Beef Brisket Linguine,13.0,pasta,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Spicy; +1.50 for extra pasta
+T001,The Royals Bistro,Sauteed Vegetables & Mushroom Linguine,12.5,pasta,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Spicy; contains garlic; +1.50 for extra pasta
+T001,The Royals Bistro,Chicken Sausage & Spinach Penne in Tomato Cream Sauce,12.5,pasta,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,+1.50 for extra pasta
+T001,The Royals Bistro,Mushroom & Spinach Penne in Tomato Cream,12.5,pasta,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Contains garlic; +1.50 for extra pasta
+T001,The Royals Bistro,"""Royals"" Beef Burger",13.8,burger,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Served with fries and salad; waiting time at least 15 mins
+T001,The Royals Bistro,Grilled Chicken & Cheese Burger,13.5,burger,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Served with fries and salad; waiting time at least 15 mins
+T001,The Royals Bistro,Salmon Burger with Garlic Aioli,14.5,burger,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Served with fries and salad; waiting time at least 15 mins
+T001,The Royals Bistro,Sauteed Mushroom Burger with Miso Cream Sauce - Beef,14.5,burger,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Served with fries and salad; waiting time at least 15 mins
+T001,The Royals Bistro,Sauteed Mushroom Burger with Miso Cream Sauce - Chicken,14.3,burger,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Served with fries and salad; waiting time at least 15 mins
+T001,The Royals Bistro,Portobello Mushroom Burger,13.5,burger,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Vegetarian; served with fries and salad
+T001,The Royals Bistro,Beef Brisket & Cheese Sandwich,12.9,sandwich,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Served with chips and salad
+T001,The Royals Bistro,Smoked Salmon Sandwich,12.9,sandwich,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Served with chips and salad
+T001,The Royals Bistro,Grilled Vege & Cheese Sandwich,12.0,sandwich,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Served with chips and salad
+T001,The Royals Bistro,Lamb Shank Quesadilla,12.9,sandwich,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Served with corn chips
+T001,The Royals Bistro,Signature Nyonya Mee Siam,9.0,local_delights,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Nasi Lemak Classic,10.8,local_delights,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Ayam Masak Merah Nasi Lemak,11.5,local_delights,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Nasi Lemak Sambal Salmon,15.0,local_delights,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Nasi Lemak Sambal Prawns & Fish,13.5,local_delights,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Beef Rendang Nasi Lemak,17.0,local_delights,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-cd1eaf92-9757-40e1-9f1f-b1808502dedf.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Long Black,4.0,drink_hot_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Flat White,5.0,drink_hot_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Cafe Latte,5.0,drink_hot_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Cappuccino,5.0,drink_hot_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Cafe Mocha,5.5,drink_hot_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Espresso Single,3.0,drink_hot_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Espresso Double,4.5,drink_hot_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Vanilla Latte,5.5,drink_hot_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Hazelnut Latte,5.5,drink_hot_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Toffeenut Latte,5.5,drink_hot_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Brown Butter Latte,5.5,drink_hot_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Orange Cafe Mocha,5.8,drink_hot_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Salted Honey Rosemary Latte,5.5,drink_hot_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Iced Long Black,5.3,drink_iced_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Iced Cafe Latte,5.8,drink_iced_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Iced Cappuccino,5.8,drink_iced_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Iced Cafe Mocha,6.5,drink_iced_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Affogato,5.5,drink_iced_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Iced Vanilla Latte,6.5,drink_iced_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Iced Hazelnut Latte,6.5,drink_iced_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Iced Toffeenut Latte,6.5,drink_iced_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Iced Brown Butter Latte,6.5,drink_iced_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Iced Dirty Matcha,7.0,drink_iced_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Iced Coffee Soda,5.5,drink_iced_coffee,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,English Breakfast Tea,4.5,drink_hot_tea,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Hot tea by the pot
+T001,The Royals Bistro,Earl Grey Tea,4.5,drink_hot_tea,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Hot tea by the pot
+T001,The Royals Bistro,Camomile Tea,4.5,drink_hot_tea,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Hot tea by the pot
+T001,The Royals Bistro,Green Tea,4.5,drink_hot_tea,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Hot tea by the pot
+T001,The Royals Bistro,Organic Lemongrass & Ginger Tea,4.5,drink_hot_tea,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Hot tea by the pot
+T001,The Royals Bistro,8 Secrets Tea,4.5,drink_hot_tea,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Strawberry and lychee flavoured blend of green tea; oolong; fruit infusion and white tea
+T001,The Royals Bistro,Summer Breeze Tea,4.5,drink_hot_tea,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Bored with usual oolong; fruity summer tea
+T001,The Royals Bistro,Warm Honey Lemon,3.5,drink_hot_beverage,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Hot Milk Tea,5.0,drink_hot_beverage,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Deluxe Hot Chocolate,6.2,drink_hot_beverage,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Hot Matcha Latte,6.2,drink_hot_beverage,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Salted Caramel Brownie Milkshake,10.0,drink_milkshake,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Chocolate Cookies Milkshake,10.0,drink_milkshake,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Contains nuts
+T001,The Royals Bistro,Almond Cookies & Cream Milkshake,10.0,drink_milkshake,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Contains nuts
+T001,The Royals Bistro,Espresso Brownie Milkshake,10.0,drink_milkshake,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Vanilla/chocolate
+T001,The Royals Bistro,Peanut Butter Brownie Milkshake,10.0,drink_milkshake,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Vanilla/chocolate
+T001,The Royals Bistro,Fudgy Brownie Chocolate Milkshake,10.0,drink_milkshake,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Classic Chocolate Milkshake,9.0,drink_milkshake,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Classic Vanilla Milkshake,9.0,drink_milkshake,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Classic Strawberry Milkshake,9.0,drink_milkshake,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,"""Royals"" Blue Lemonade",6.5,drink_lemonade,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Raspberry Lemonade,6.5,drink_lemonade,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Classic Mint Lemonade,6.5,drink_lemonade,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,White Peach Mint Lemonade,6.5,drink_lemonade,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Homemade Iced Honey Lemon,3.5,drink_cold_beverage,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Homemade Iced Lemon Tea,3.5,drink_cold_beverage,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Lychee Iced Lemon Tea,6.5,drink_cold_beverage,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Lychee Elderflower Fizz,6.5,drink_cold_beverage,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Passion Berry Iced Tea,6.5,drink_cold_beverage,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Passionfruit Soda,6.5,drink_cold_beverage,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Wild Berry Soda,6.5,drink_cold_beverage,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,White Peach & Raspberry Fizz,6.5,drink_cold_beverage,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Iced P.E.M. Tea,6.5,drink_cold_beverage,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Passionfruit + elderflower + mint
+T001,The Royals Bistro,White Grape Black Tea Shake,6.5,drink_cold_beverage,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Deluxe Iced Chocolate,6.8,drink_cold_beverage,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Iced Matcha Latte,6.8,drink_cold_beverage,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Strawberry Matcha Latte,7.0,drink_cold_beverage,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Iced Milk Tea,5.5,drink_cold_beverage,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Prices subject to 9% GST
+T001,The Royals Bistro,Canned Drinks,3.0,drink_cold_beverage,,C:/Users/wuaomo/AppData/Local/Temp/codex-clipboard-3ca09f63-81f8-4822-87dd-bec2443d6e72.png,2026-08-03,Coke/Sprite/Coke Zero/Ayataka/orange juice/soda water

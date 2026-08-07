@@ -1,0 +1,3 @@
+restaurant_id,restaurant_name,source_url,delivery_address,notes
+T026,Syed Cafe,https://www.foodpanda.sg/restaurant/ch6o/syed-cafe-nuh,1 Lower Kent Ridge Road Singapore 119082,matched_exact_nuh_one_kentridge
+T010,Bistro Box,https://www.foodpanda.sg/restaurant/p0a6/bistro-box-by-uncle-penyet-thomson-plaza,College of Design and Engineering NUS Singapore,brand_reference_thomson_plaza
