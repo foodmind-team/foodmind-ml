@@ -7,3 +7,6 @@ artifacts/candidate/
 *.npz
 __pycache__/
 *.pyc
+
+### macOS ###
+.DS_Store
