@@ -1,0 +1,2 @@
+﻿restaurant_id,restaurant_name,raw_menu_item_name,raw_price,raw_category,source_url,source_file,collected_at,notes,price_sgd,price_note,description,address,postal_code,latitude,longitude,restaurant_rating,rating_count,cuisine
+T003,Udon Don Bar,,,,https://www.foodpanda.sg/restaurant/y6ri/udon-don-bar-create-way,,2026-08-03,needs_manual_review: fetch failed: HTTP Error 403: Forbidden,,,,,,,,,,

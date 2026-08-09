@@ -1,0 +1,7 @@
+﻿restaurant_id,restaurant_name,raw_menu_item_name,raw_price,raw_category,source_url,source_file,collected_at,notes,price_sgd,price_note,description,address,postal_code,latitude,longitude,restaurant_rating,rating_count,cuisine
+T014,Burger King,,,,https://www.foodpanda.sg/restaurant/s6po/burger-king-r-oneatkentridge,,2026-08-03,needs_manual_review: browser reached human verification page,,,,,,,,,,
+T021,Ordinary Burgers,,,,https://www.foodpanda.sg/restaurant/izfs/ordinary-burgers-lower-kent-ridge,,2026-08-03,needs_manual_review: browser reached human verification page,,,,,,,,,,
+T022,Poke Theory,,,,https://www.foodpanda.sg/restaurant/w8ue/poke-theory-kent-ridge,,2026-08-03,needs_manual_review: browser reached human verification page,,,,,,,,,,
+T023,Polar Cafe,,,,https://www.foodpanda.sg/restaurant/lzp0/polar-puffs-and-cakes-lower-kent-ridge,,2026-08-03,needs_manual_review: browser reached human verification page,,,,,,,,,,
+T025,Stuff'd,,,,https://www.foodpanda.sg/restaurant/xcjw/stuffd-oneatkentridge,,2026-08-03,needs_manual_review: browser reached human verification page,,,,,,,,,,
+T029,Xin Wang Hong Kong Cafe,,,,https://www.foodpanda.sg/restaurant/v1fz/xin-wang-hong-kong-cafe-nuh-medical-centre,,2026-08-03,needs_manual_review: browser reached human verification page,,,,,,,,,,

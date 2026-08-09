@@ -1,0 +1,41 @@
+target_id,restaurant_name,source_type,source_url,source_status,notes
+T004,Hae Bok's Korean Restaurant,web_profile,https://myfave.com/sg/partners/hae-boks-korean-restaurant,needs_manual_review,Public profile describes menu but prices not exposed
+T005,Koufu Food Court,nus_directory,https://uci.nus.edu.sg/campus-life/campus-services/retail-dining/university-town/,needs_manual_review,Food court directory only; stall menus need photos or stall pages
+T008,Arise and Shine,openrice,https://ph.openrice.com/en/singapore/r-arise-and-shine-%E6%9D%9C%E5%BC%97-%E4%BA%9E%E6%B4%B2%E6%96%99%E7%90%86-%E5%92%96%E5%95%A1-r240140/menus,extract_candidate,OpenRice menu page
+T011,Burnt Cones,official_menu,https://www.burntcones.com/,extract_candidate,Official weekly gelato menu with prices
+T018,Hugabo,foodpanda_indexed,https://www.foodpanda.sg/restaurant/u4cp/hugabo-nuh-medical-centre,extract_candidate,Search-indexed Foodpanda menu text for nearby NUH/One@KentRidge brand
+T018,Hugabo,halalboleh,https://halalboleh.com/shop/hugabo/9-lower-kent-ridge-road,extract_candidate,Public One@KentRidge menu description with some prices
+T019,Kaffe & Toast,official_locations,https://www.kaffeandtoast.sg/,extract_candidate,Official site lists menu categories
+T019,Kaffe & Toast,halalboleh,https://halalboleh.com/shop/kaffe-toast/9-lower-kent-ridge-road,extract_candidate,Public One@KentRidge menu description
+T020,Masta Kafe,halalboleh,https://halalboleh.com/shop/masta-kafe/9-lower-kent-ridge-road,extract_candidate,Public One@KentRidge menu description
+T024,Saap Saap Thai,price_page,https://sgfoodprice.org/saap-saap-thai-singapore-menu/,extract_candidate,Menu price page
+T030,KICK Cafe,nus_related,https://www.nuss.org.sg/nuss_f_b/cafe-on-the-ridge/,needs_manual_review,Nearby cafe menu source; verify if same target
+T036,JINJJA Chicken,official_menu,https://www.jinjjachicken.com/menus,extract_candidate,Official menu page
+T036,JINJJA Chicken,price_page,https://menuprices.sg/jinjja-chicken-singapore-menu/,extract_candidate,Menu price page
+T042,4Fingers Crispy Chicken,official_menu,https://www.4fingers.com.sg/menu,extract_candidate,Official menu page
+T042,4Fingers Crispy Chicken,price_page,https://menuprices.sg/4-fingers-singapore-menu/,extract_candidate,Menu price page
+T043,Saizeriya,official_pdf,https://www.saizeriya.com.sg/pdf/GrandMenu1206_s_single.pdf,extract_candidate,Official PDF grand menu
+T043,Saizeriya,price_page,https://www.allsgpromo.com/saizeriya-menu/,extract_candidate,Menu price page
+T047,Mei Heong Yuen Dessert,official_menu,https://www.meiheongyuendessert.com.sg/index.php/our-menu,extract_candidate,Official menu page; prices may be image-only
+T047,Mei Heong Yuen Dessert,oddle,https://meiheongyuendessert.oddle.me/en_SG,extract_candidate,Oddle ordering page
+T019,Kaffe & Toast,price_page,https://sgfoodprice.org/kaffe-toast-singapore-menu/,extract_candidate,Public brand menu price page; One@KentRidge branch applicability should be reviewed
+T031,Jewel Coffee,price_page,https://healthyeatwhere.com/jewel-coffee/,extract_candidate,Public menu price page for Jewel Coffee; Savourworld branch applicability should be reviewed
+T046,Xin Wang Hong Kong Cafe,price_page,https://healthyeatwhere.com/xin-wang-hong-kong-cafe-menu-sg/,extract_candidate,Public brand menu price page; 321 Clementi branch applicability should be reviewed
+T028,Starbucks,price_page,https://menuzsg.com/starbucks-menu-singapore/,extract_candidate,Public Singapore menu price page; NUH outlet applicability should be reviewed
+T035,Boleh Boleh!,mall_public_page,https://clementimall.co/shop/boleh-boleh-clementi-mall,extract_candidate,Clementi Mall public page contains structured menu text with prices; branch-specific page but review OCR-style extraction
+T017,Delifrance,price_page,https://sgfoodprice.org/delifrance-singapore-menu/,extract_candidate,Public brand menu price page; One@KentRidge/NUH branch applicability should be reviewed
+T007,Anna's x The Soup Spoon Union,price_page,https://menuprices.sg/soup-spoon-singapore-menu/,extract_candidate,Public Soup Spoon menu price page; NUS branch applicability should be reviewed
+T023,Polar Cafe,price_page,https://menuprices.sg/polar-puffs-cakes-menu/,extract_candidate,Public Polar Puffs and Cakes menu price page; One@KentRidge branch applicability should be reviewed
+T015,Crave Nasi Lemak,price_page,https://menuprices.sg/crave-nasi-lemak-singapore-menu/,extract_candidate,Public Crave Nasi Lemak menu price page; One@KentRidge branch applicability should be reviewed
+T040,Hawkers' Street,foodpanda_indexed,https://www.foodpanda.sg/restaurant/vp5a/the-neighbourwok-hawkers-street-at-the-clementi-mall,extract_candidate,Foodpanda search-indexed public menu for a Hawkers Street Clementi Mall stall
+T040,Hawkers' Street,foodpanda_indexed,https://www.foodpanda.sg/restaurant/uced/old-teochew-hawkers-street-at-the-clementi-mall,extract_candidate,Foodpanda search-indexed public menu for a Hawkers Street Clementi Mall stall
+T040,Hawkers' Street,foodpanda_indexed,https://www.foodpanda.sg/restaurant/ts1f/pangs-hakka-ytf-hawkers-street-at-the-clementi-mall,extract_candidate,Foodpanda search-indexed public menu for a Hawkers Street Clementi Mall stall; may require review if access denied
+T041,Toasties,article_price_mentions,https://www.misstamchiak.com/321-clementi/,extract_candidate,Article includes Toasties item price mentions for 321 Clementi branch
+T044,Charcoal Thai,article_price_mentions,https://www.misstamchiak.com/321-clementi/,extract_candidate,Article includes Charcoal Thai set/buffet price mentions for 321 Clementi branch
+T045,Vons Chicken,article_price_mentions,https://danielfooddiary.com/2015/11/25/vonschicken/,extract_candidate,Article includes Vons Chicken item price mentions for 321 Clementi branch
+T034,Ramen Ichiro,article_price_mentions,https://danielfooddiary.com/2021/09/21/theclementimall/,extract_candidate,Article includes Ramen Ichiro menu price mentions at The Clementi Mall; note outlet may require current-status review
+T040,Hawkers' Street,article_price_mentions,https://sethlui.com/hawkers-street-clementi-singapore-oct-2025/,extract_candidate,Article includes Hawkers Street Clementi item price mentions
+T040,Hawkers' Street,article_price_mentions,https://www.littledayout.com/hawkers-street-clementi-mall-food-court/,extract_candidate,Article includes Hawkers Street Clementi stall item price mentions
+T020,Masta Kafe,article_price_mentions,https://thefoodchapter.blogspot.com/2016/07/confinement-food-national-university.html,extract_candidate,Article includes a Masta Kafe item price mention; historical/partial menu
+T026,Syed Cafe,foodpanda_indexed,https://www.foodpanda.sg/restaurant/ch6o/syed-cafe-nuh,extract_candidate,Foodpanda public menu for Syed Cafe NUH / One@KentRidge exact outlet
+T010,Bistro Box,foodpanda_indexed,https://www.foodpanda.sg/restaurant/p0a6/bistro-box-by-uncle-penyet-thomson-plaza,extract_candidate,Foodpanda public menu for Bistro Box by Uncle Penyet brand; Thomson Plaza branch reference, not NUS CDE exact outlet
