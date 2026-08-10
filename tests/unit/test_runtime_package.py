@@ -36,6 +36,7 @@ class RuntimePackageTest(unittest.TestCase):
                 self.assertEqual(artifact["weights"].shape, (len(RUNTIME_FEATURES) + 1,))
             self.assertEqual(manifest["featureNames"], list(RUNTIME_FEATURES))
             self.assertEqual(manifest["approvedFor"], ["local"])
+            self.assertEqual(len(manifest["sourceArtifactSha256"]), 64)
 
 
 if __name__ == "__main__":

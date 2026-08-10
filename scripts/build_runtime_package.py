@@ -22,6 +22,7 @@ RUNTIME_FEATURES = (
 
 
 def build(source: Path, output: Path) -> None:
+    source_digest = hashlib.sha256(source.read_bytes()).hexdigest()
     with np.load(source, allow_pickle=False) as model:
         names = tuple(str(name) for name in model["feature_names"].tolist())
         weights = np.asarray(model["weights"], dtype=float)
@@ -77,6 +78,7 @@ def build(source: Path, output: Path) -> None:
         "featureNames": list(RUNTIME_FEATURES),
         "createdAt": datetime.now(UTC).isoformat(),
         "sourceArtifact": str(source),
+        "sourceArtifactSha256": source_digest,
     }
     (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
 
