@@ -12,7 +12,6 @@ import pandas as pd
 
 from foodmind_ml.collaborative import ItemCF, UserCF, cosine_similarity, weighted_rating_score
 
-
 CUISINE_TAGS = {
     "african",
     "american",
@@ -91,7 +90,9 @@ def _dish_feature_flags(name: object, tags: object) -> dict[str, int]:
     return {
         "is_spicy": _has_any(text, ("spicy", "chili", "chilli", "curry", "hot")),
         "is_sweet": _has_any(text, ("sweet", "dessert", "cake", "cookie", "sugar")),
-        "is_main_dish": _has_any(text, ("main dish", "main ingredient", "dinner", "lunch", "rice", "noodle", "pasta", "meat")),
+        "is_main_dish": _has_any(
+            text, ("main dish", "main ingredient", "dinner", "lunch", "rice", "noodle", "pasta", "meat")
+        ),
     }
 
 
@@ -123,7 +124,9 @@ def prepare_foodcom(
     dishes = (
         recipes.sort_values(["dish_id", "original_recipe_id"])
         .groupby("dish_id", as_index=False)
-        .first()[["dish_id", "canonical_dish_name", "original_recipe_id", "ingredients", "tags", "cuisine", "nutrition"]]
+        .first()[
+            ["dish_id", "canonical_dish_name", "original_recipe_id", "ingredients", "tags", "cuisine", "nutrition"]
+        ]
         .rename(columns={"canonical_dish_name": "dish_name"})
     )
     dishes.to_csv(processed_dir / "dishes.csv", index=False)
@@ -173,7 +176,9 @@ def prepare_foodcom(
     stats = stats.rename(columns={"mean": "dish_avg_rating", "count": "dish_rating_count"})
     feature_rows = []
     for row in dishes.to_dict("records"):
-        feature_rows.append({"dish_id": row["dish_id"], "cuisine": row["cuisine"], **_dish_feature_flags(row["dish_name"], row["tags"])})
+        feature_rows.append(
+            {"dish_id": row["dish_id"], "cuisine": row["cuisine"], **_dish_feature_flags(row["dish_name"], row["tags"])}
+        )
     dish_features = pd.DataFrame(feature_rows).merge(stats, on="dish_id", how="left")
     dish_features["dish_avg_rating"] = dish_features["dish_avg_rating"].fillna(0)
     dish_features["dish_rating_count"] = dish_features["dish_rating_count"].fillna(0).astype(int)
@@ -202,7 +207,9 @@ def _time_split_by_user(interactions: pd.DataFrame) -> tuple[pd.DataFrame, pd.Da
     return train.drop(columns=drop), validation.drop(columns=drop), test.drop(columns=drop)
 
 
-def build_cf_scores(matrix: np.ndarray, pairs: list[tuple[int, int]], k: int = 25) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+def build_cf_scores(
+    matrix: np.ndarray, pairs: list[tuple[int, int]], k: int = 25
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     user_cf = UserCF(k=k).fit(matrix)
     item_cf = ItemCF(k=k).fit(matrix)
     user_scores, user_ok = user_cf.score_many(pairs)
@@ -265,7 +272,9 @@ def filter_restaurant_candidates(
             suffixes=("", "_mapped"),
         )
         if "dish_id_mapped" in rows.columns:
-            rows["dish_id"] = _first_non_empty(rows.get("dish_id", pd.Series("", index=rows.index)), rows["dish_id_mapped"])
+            rows["dish_id"] = _first_non_empty(
+                rows.get("dish_id", pd.Series("", index=rows.index)), rows["dish_id_mapped"]
+            )
             rows = rows.drop(columns=["dish_id_mapped"])
 
     rows["price_sgd"] = pd.to_numeric(rows.get("price_sgd"), errors="coerce")
@@ -297,7 +306,9 @@ def filter_restaurant_candidates(
 
     rows["price_budget_ratio"] = rows["price_sgd"] / float(budget_sgd) if budget_sgd else 1.0
     rows["budget_fit_score"] = (1.0 - rows["price_budget_ratio"]).clip(lower=0.0, upper=1.0)
-    rows["distance_fit_score"] = (1.0 - rows["distance_km"] / float(radius_km)).clip(lower=0.0, upper=1.0) if radius_km else 0.0
+    rows["distance_fit_score"] = (
+        (1.0 - rows["distance_km"] / float(radius_km)).clip(lower=0.0, upper=1.0) if radius_km else 0.0
+    )
     return rows.sort_values(["distance_km", "price_sgd", "restaurant_menu_id"], kind="stable").reset_index(drop=True)
 
 
@@ -308,7 +319,9 @@ def build_user_preference_profiles(interactions: pd.DataFrame, dish_features: pd
         joined["label"] = joined["rating"].map(rating_to_label)
     joined = joined[joined["label"] == 1].join(dish_features[feature_cols], on="dish_id", how="inner")
     if joined.empty:
-        return pd.DataFrame(columns=["user_id", "user_spicy_preference", "user_sweet_preference", "user_main_dish_preference"]).set_index("user_id")
+        return pd.DataFrame(
+            columns=["user_id", "user_spicy_preference", "user_sweet_preference", "user_main_dish_preference"]
+        ).set_index("user_id")
     profiles = joined.groupby("user_id")[feature_cols].mean()
     return profiles.rename(
         columns={
@@ -358,7 +371,7 @@ class NumpyLogisticRegression:
         self.std_: np.ndarray | None = None
         self.weights_: np.ndarray | None = None
 
-    def fit(self, x: np.ndarray, y: np.ndarray) -> "NumpyLogisticRegression":
+    def fit(self, x: np.ndarray, y: np.ndarray) -> NumpyLogisticRegression:
         x = np.asarray(x, dtype=float)
         y = np.asarray(y, dtype=float)
         self.mean_ = x.mean(axis=0)
@@ -438,7 +451,9 @@ def train_hybrid_model(
     user_profiles = build_user_preference_profiles(train, dish_features)
 
     x_train, y_train, _ = _features(train, matrix, user_index, dish_index, dish_features, user_avg, user_profiles)
-    x_val, y_val, val_rows = _features(validation, matrix, user_index, dish_index, dish_features, user_avg, user_profiles)
+    x_val, y_val, val_rows = _features(
+        validation, matrix, user_index, dish_index, dish_features, user_avg, user_profiles
+    )
     x_test, y_test, _ = _features(test, matrix, user_index, dish_index, dish_features, user_avg, user_profiles)
     if len(y_train) == 0:
         raise ValueError("no labelled training rows after filtering")
@@ -520,7 +535,9 @@ def _features(
     overlapping_feature_cols = [col for col in dish_features.columns if col in rows.columns]
     rows = rows.drop(columns=overlapping_feature_cols)
     joined = rows.join(dish_features, on="dish_id")
-    joined = add_user_preference_scores(joined, user_profiles if user_profiles is not None else pd.DataFrame(), dish_features)
+    joined = add_user_preference_scores(
+        joined, user_profiles if user_profiles is not None else pd.DataFrame(), dish_features
+    )
     joined["dish_avg_rating"] = joined["dish_avg_rating"].fillna(0) / 5.0
     joined["dish_rating_count_log"] = joined["dish_rating_count"].fillna(0).map(lambda value: math.log1p(value))
     for col in ["is_spicy", "is_sweet", "is_main_dish"]:
@@ -634,7 +651,9 @@ def prepare_cli() -> None:
     parser.add_argument("--min-user-interactions", type=int, default=5)
     parser.add_argument("--min-dish-interactions", type=int, default=5)
     args = parser.parse_args()
-    summary = prepare_foodcom(Path(args.raw_dir), Path(args.processed_dir), args.min_user_interactions, args.min_dish_interactions)
+    summary = prepare_foodcom(
+        Path(args.raw_dir), Path(args.processed_dir), args.min_user_interactions, args.min_dish_interactions
+    )
     print(json.dumps(summary, indent=2))
 
 
@@ -646,5 +665,7 @@ def train_cli() -> None:
     parser.add_argument("--max-users", type=int, default=1200)
     parser.add_argument("--max-dishes", type=int, default=1200)
     args = parser.parse_args()
-    metrics = train_hybrid_model(Path(args.processed_dir), Path(args.artifacts_dir), Path(args.reports_dir), args.max_users, args.max_dishes)
+    metrics = train_hybrid_model(
+        Path(args.processed_dir), Path(args.artifacts_dir), Path(args.reports_dir), args.max_users, args.max_dishes
+    )
     print(json.dumps(metrics, indent=2))

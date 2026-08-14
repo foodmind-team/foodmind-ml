@@ -10,7 +10,6 @@ from __future__ import annotations
 import csv
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 RAW_PATH = ROOT / "data/interim/foodpanda_menus_address_verified.csv"
 VALIDATION_PATH = ROOT / "data/interim/foodpanda_address_verified_branch_validation.csv"
@@ -92,7 +91,10 @@ def main() -> int:
                 "notes": (
                     "Foodpanda browser snapshot after manual human verification; target branch address matched"
                     if exact
-                    else "Foodpanda browser snapshot after manual human verification; same brand but actual branch differs from target"
+                    else (
+                        "Foodpanda browser snapshot after manual human verification; "
+                        "same brand but actual branch differs from target"
+                    )
                 ),
             }
         )
@@ -101,7 +103,8 @@ def main() -> int:
     print(f"kept_other_rows: {len(main_rows)}")
     print(f"merged_foodpanda_rows: {len(converted)}")
     print(f"exact_rows: {sum(1 for row in converted if row['source'] == 'foodpanda_address_verified_exact')}")
-    print(f"brand_reference_rows: {sum(1 for row in converted if row['source'] == 'foodpanda_address_verified_brand_reference')}")
+    brand_reference_rows = sum(1 for row in converted if row["source"] == "foodpanda_address_verified_brand_reference")
+    print(f"brand_reference_rows: {brand_reference_rows}")
     print(f"restaurant_menu_collected_rows: {len(main_rows) + len(converted)}")
     return 0
 

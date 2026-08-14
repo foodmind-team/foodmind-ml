@@ -28,7 +28,7 @@ def weighted_rating_score(ratings: np.ndarray, weights: np.ndarray, k: int) -> t
 class UserCF:
     k: int = 25
 
-    def fit(self, user_item_matrix: np.ndarray) -> "UserCF":
+    def fit(self, user_item_matrix: np.ndarray) -> UserCF:
         self.matrix_ = np.asarray(user_item_matrix, dtype=float)
         self.user_similarity_ = cosine_similarity(self.matrix_)
         np.fill_diagonal(self.user_similarity_, 0.0)
@@ -57,7 +57,7 @@ class UserCF:
 class ItemCF:
     k: int = 25
 
-    def fit(self, user_item_matrix: np.ndarray) -> "ItemCF":
+    def fit(self, user_item_matrix: np.ndarray) -> ItemCF:
         self.matrix_ = np.asarray(user_item_matrix, dtype=float)
         self.item_similarity_ = cosine_similarity(self.matrix_.T)
         np.fill_diagonal(self.item_similarity_, 0.0)

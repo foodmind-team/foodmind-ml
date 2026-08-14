@@ -1,0 +1,104 @@
+name: ML CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ml-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  PYTHON_VERSION: '3.13'
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          enable-cache: true
+      - run: uv sync --frozen --dev
+      - name: Check formatting
+        run: uv run ruff format --check .
+      - name: Lint
+        run: uv run ruff check .
+      - name: Test deterministic model and packaging behavior
+        run: |
+          mkdir -p reports/ci
+          uv run pytest -W error --junitxml=reports/ci/junit.xml
+      - name: Upload test evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: ml-test-evidence-${{ github.sha }}
+          path: reports/ci/junit.xml
+          if-no-files-found: ignore
+          retention-days: 14
+
+  security:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          enable-cache: true
+      - run: uv sync --frozen --dev
+      - name: Verify dependency consistency
+        run: uv pip check
+      - name: Audit production dependencies
+        run: |
+          mkdir -p reports/ci
+          uv export --frozen --no-dev --no-emit-project --format requirements-txt --no-hashes -o reports/ci/requirements-audit.txt
+          uvx --from pip-audit==2.10.1 pip-audit \
+            --requirement reports/ci/requirements-audit.txt \
+            --format json \
+            --output reports/ci/pip-audit.json
+      - name: Enforce dependency license policy
+        run: >-
+          uv run --with pip-licenses==5.5.5 pip-licenses
+          --ignore-packages foodmind-ml
+          --fail-on "GPL-2.0-only;GPL-2.0-or-later;GPL-3.0-only;GPL-3.0-or-later;AGPL-3.0-only;AGPL-3.0-or-later;GNU General Public License;GNU Affero General Public License"
+          --partial-match --format=json --output-file=reports/ci/licenses.json
+      - name: Scan tracked source for secrets
+        run: |
+          image="zricethezav/gitleaks:v8.28.0@sha256:cdbb7c955abce02001a9f6c9f602fb195b7fadc1e812065883f695d1eeaba854"
+          scopes=(.github README.md data docs pyproject.toml reports/metrics scripts src tests uv.lock)
+          for scope in "${scopes[@]}"; do
+            docker run --rm -v "${GITHUB_WORKSPACE}:/repo:ro" "${image}" detect \
+              --no-git --source "/repo/${scope}" --redact --exit-code 1 --log-level error
+          done
+      - name: Upload security evidence
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: ml-security-evidence-${{ github.sha }}
+          path: |
+            reports/ci/requirements-audit.txt
+            reports/ci/pip-audit.json
+            reports/ci/licenses.json
+          if-no-files-found: ignore
+          retention-days: 14
+
+  ml-gate:
+    name: ML gate
+    if: always()
+    needs: [quality, security]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require quality and security checks
+        run: |
+          test "${{ needs.quality.result }}" = success
+          test "${{ needs.security.result }}" = success

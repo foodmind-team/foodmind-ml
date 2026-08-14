@@ -20,7 +20,6 @@ from typing import Any
 from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
-
 DEFAULT_URLS_FILE = "data/external/foodpanda_menu_urls.csv"
 DEFAULT_OUTPUT = "data/interim/foodpanda_menus_raw.csv"
 FIELDNAMES = [
@@ -45,9 +44,7 @@ FIELDNAMES = [
     "cuisine",
 ]
 
-SECTION_RE = re.compile(
-    r'<div class="[^"]*\bdish-category-section\b[^"]*"[^>]*data-testid="menu-category-section"'
-)
+SECTION_RE = re.compile(r'<div class="[^"]*\bdish-category-section\b[^"]*"[^>]*data-testid="menu-category-section"')
 TITLE_RE = re.compile(r"<h2[^>]*>(.*?)</h2>", re.DOTALL)
 PRODUCT_RE = re.compile(
     r'<li class="[^"]*\bproduct-tile\b[^"]*"[^>]*data-testid="menu-product".*?</li>',

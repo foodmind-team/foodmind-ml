@@ -10,7 +10,6 @@ from pathlib import Path
 
 import numpy as np
 
-
 RUNTIME_FEATURES = (
     "preference_match",
     "want_to_try",

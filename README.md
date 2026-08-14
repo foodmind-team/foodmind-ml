@@ -2,7 +2,7 @@
 
 FoodMind ML is the offline model-development repository for FoodMind. It prepares data, engineers features, calculates collaborative signals, trains and evaluates the Logistic Regression acceptance model, and publishes a versioned model package for `foodmind-intelligence`.
 
-> **Current status:** directory framework only. No data pipeline, notebook, training script, evaluation, model artifact, or release automation has been implemented.
+> **Current status:** an initial deterministic training pipeline, collaborative feature implementation, candidate model artifact, evaluation evidence, and runtime package builder are implemented. The model is still a project-stage candidate and must not be described as production-validated.
 
 ## Repository Role
 
@@ -49,6 +49,7 @@ The handoff is a versioned model-package contract, not copied source code.
 
 ```text
 foodmind-ml/
+├── .github/workflows/ml-ci.yml
 ├── data/
 │   └── processed/
 ├── docs/
@@ -57,17 +58,13 @@ foodmind-ml/
 ├── reports/
 │   └── metrics/
 ├── scripts/
+├── pyproject.toml
 ├── src/foodmind_ml/
 │   ├── __init__.py
+│   ├── collaborative/
 │   └── pipeline.py
 └── tests/
     └── unit/
-```
-│   └── packaging/
-└── tests/
-    ├── unit/
-    ├── integration/
-    └── reproducibility/
 ```
 
 ## Model Design
