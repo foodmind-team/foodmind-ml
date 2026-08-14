@@ -33,4 +33,3 @@ target-version = "py313"
 
 [tool.ruff.lint]
 select = ["B", "E", "F", "I", "N", "PIE", "UP"]
-
