@@ -52,7 +52,9 @@ def reason_codes(row: pd.Series) -> str:
     return "|".join(codes)
 
 
-def build_indices(train: pd.DataFrame, candidate_dish_ids: list[str], user_id: str, max_users: int, max_dishes: int) -> tuple[dict[str, int], dict[str, int], np.ndarray]:
+def build_indices(
+    train: pd.DataFrame, candidate_dish_ids: list[str], user_id: str, max_users: int, max_dishes: int
+) -> tuple[dict[str, int], dict[str, int], np.ndarray]:
     users = train["user_id"].value_counts().head(max_users).index.tolist()
     if user_id not in users:
         users.append(user_id)
@@ -114,7 +116,9 @@ def recommend(args: argparse.Namespace) -> pd.DataFrame:
 
     scored_rows = scored_rows.copy()
     scored_rows["acceptance_probability"] = model.predict_proba(x)
-    scored_rows["dish_name"] = scored_rows["dish_id"].map(dishes["dish_name"]).fillna(scored_rows["canonical_dish_name"])
+    scored_rows["dish_name"] = (
+        scored_rows["dish_id"].map(dishes["dish_name"]).fillna(scored_rows["canonical_dish_name"])
+    )
     scored_rows["reason_codes"] = scored_rows.apply(reason_codes, axis=1)
     keep = [
         "restaurant_menu_id",

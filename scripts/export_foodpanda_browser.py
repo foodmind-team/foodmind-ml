@@ -21,7 +21,6 @@ from typing import Any
 
 from playwright.sync_api import sync_playwright
 
-
 DEFAULT_URLS_FILE = "data/external/foodpanda_menu_urls.csv"
 DEFAULT_OUTPUT = "data/interim/foodpanda_menus_raw.csv"
 DEFAULT_CDP = "http://127.0.0.1:9222"
@@ -165,8 +164,16 @@ def extract_products(page: Any) -> list[dict[str, str]]:
             const category = text(titleEl);
             const products = [...section.querySelectorAll('[data-testid="menu-product"]')];
             for (const product of products) {
-              const name = text(product.querySelector('[data-testid="menu-product-name"], [data-testid="menu-popular-tile-name"]'));
-              const price = text(product.querySelector('[data-testid="menu-product-price"], [data-testid="menu-popular-tile-price"]'));
+              const nameSelector = [
+                '[data-testid="menu-product-name"]',
+                '[data-testid="menu-popular-tile-name"]',
+              ].join(', ');
+              const priceSelector = [
+                '[data-testid="menu-product-price"]',
+                '[data-testid="menu-popular-tile-price"]',
+              ].join(', ');
+              const name = text(product.querySelector(nameSelector));
+              const price = text(product.querySelector(priceSelector));
               const description = text(product.querySelector('[data-testid="menu-product-description"]'));
               if (name && price) rows.push({category, name, price, description});
             }
@@ -372,7 +379,9 @@ def main(argv: list[str] | None = None) -> int:
                     }
                 ]
             menu_count = sum(1 for row in rows if row["raw_menu_item_name"])
-            print(f"[{index}/{len(input_rows)}] {input_row.get('restaurant_id')} {input_row.get('restaurant_name')}: {menu_count}")
+            restaurant_id = input_row.get("restaurant_id")
+            restaurant_name = input_row.get("restaurant_name")
+            print(f"[{index}/{len(input_rows)}] {restaurant_id} {restaurant_name}: {menu_count}")
             if menu_count:
                 all_rows.extend(rows)
             else:

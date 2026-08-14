@@ -3,6 +3,7 @@ data/raw/*
 !data/raw/.gitkeep
 data/processed/*.csv
 artifacts/candidate/
+reports/ci/
 *.pkl
 *.npz
 __pycache__/
