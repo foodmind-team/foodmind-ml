@@ -6,6 +6,7 @@ artifacts/candidate/
 reports/ci/
 *.pkl
 *.npz
+.tmp/
 __pycache__/
 *.pyc
 

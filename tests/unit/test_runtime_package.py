@@ -36,7 +36,41 @@ class RuntimePackageTest(unittest.TestCase):
                 self.assertEqual(artifact["weights"].shape, (len(RUNTIME_FEATURES) + 1,))
             self.assertEqual(manifest["featureNames"], list(RUNTIME_FEATURES))
             self.assertEqual(manifest["approvedFor"], ["local"])
+            self.assertIsNone(manifest["collaborativeIndex"])
             self.assertEqual(len(manifest["sourceArtifactSha256"]), 64)
+
+    def test_copies_only_a_versioned_collaborative_index(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = root / "source.npz"
+            names = ["user_cf_score", "item_cf_score"]
+            np.savez(
+                source,
+                weights=np.arange(len(names) + 1, dtype=float),
+                mean=np.ones(len(names)),
+                std=np.ones(len(names)),
+                feature_names=np.array(names),
+            )
+            index = root / "index.json"
+            index.write_text(
+                json.dumps(
+                    {
+                        "schemaVersion": "foodmind-collaborative-index-v1",
+                        "sourceSnapshotSha256": "a" * 64,
+                        "positiveOnly": True,
+                        "userCf": {},
+                        "itemCf": {},
+                    }
+                ),
+                encoding="utf-8",
+            )
+            output = root / "package"
+            build(source, output, index)
+
+            manifest = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
+            self.assertEqual(manifest["collaborativeIndex"]["artifact"], "collaborative_index.json")
+            self.assertTrue(manifest["collaborativeIndex"]["positiveOnly"])
+            self.assertTrue((output / "collaborative_index.json").is_file())
 
 
 if __name__ == "__main__":

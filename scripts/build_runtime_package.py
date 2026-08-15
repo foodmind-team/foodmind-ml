@@ -11,6 +11,10 @@ from pathlib import Path
 import numpy as np
 
 RUNTIME_FEATURES = (
+    "user_cf_score",
+    "user_cf_available",
+    "item_cf_score",
+    "item_cf_available",
     "preference_match",
     "want_to_try",
     "group_preference_rate",
@@ -20,7 +24,7 @@ RUNTIME_FEATURES = (
 )
 
 
-def build(source: Path, output: Path) -> None:
+def build(source: Path, output: Path, collaborative_index: Path | None = None) -> None:
     source_digest = hashlib.sha256(source.read_bytes()).hexdigest()
     with np.load(source, allow_pickle=False) as model:
         names = tuple(str(name) for name in model["feature_names"].tolist())
@@ -34,6 +38,10 @@ def build(source: Path, output: Path) -> None:
     # These mappings preserve learned signals that are supplied by the runtime
     # contract; unavailable source-model features are intentionally neutral.
     mappings = {
+        "user_cf_score": "user_cf_score",
+        "user_cf_available": "user_cf_available",
+        "item_cf_score": "item_cf_score",
+        "item_cf_available": "item_cf_available",
         "preference_match": "user_preference_score",
         "want_to_try": None,
         "group_preference_rate": "dish_avg_rating",
@@ -47,6 +55,11 @@ def build(source: Path, output: Path) -> None:
     for name in RUNTIME_FEATURES:
         source_name = mappings[name]
         if source_name is None:
+            runtime_weights.append(0.0)
+            runtime_mean.append(0.0)
+            runtime_std.append(1.0)
+            continue
+        if source_name not in source_index:
             runtime_weights.append(0.0)
             runtime_mean.append(0.0)
             runtime_std.append(1.0)
@@ -65,6 +78,24 @@ def build(source: Path, output: Path) -> None:
         std=np.asarray(runtime_std, dtype=float),
         feature_names=np.asarray(RUNTIME_FEATURES),
     )
+    index_metadata = None
+    if collaborative_index is not None:
+        raw_index = collaborative_index.read_bytes()
+        parsed_index = json.loads(raw_index)
+        if parsed_index.get("schemaVersion") != "foodmind-collaborative-index-v1":
+            raise ValueError("collaborative index has an unsupported schema")
+        source_snapshot_sha = parsed_index.get("sourceSnapshotSha256")
+        if not isinstance(source_snapshot_sha, str) or len(source_snapshot_sha) != 64:
+            raise ValueError("collaborative index has no verifiable source snapshot checksum")
+        target = output / "collaborative_index.json"
+        target.write_bytes(raw_index)
+        index_metadata = {
+            "artifact": target.name,
+            "artifactSha256": hashlib.sha256(raw_index).hexdigest(),
+            "schemaVersion": parsed_index["schemaVersion"],
+            "sourceSnapshotSha256": source_snapshot_sha,
+            "positiveOnly": parsed_index.get("positiveOnly") is True,
+        }
     manifest = {
         "packageVersion": "recommendation-package-v1",
         "modelVersion": "hybrid-ranking-v1",
@@ -78,6 +109,7 @@ def build(source: Path, output: Path) -> None:
         "createdAt": datetime.now(UTC).isoformat(),
         "sourceArtifact": str(source),
         "sourceArtifactSha256": source_digest,
+        "collaborativeIndex": index_metadata,
     }
     (output / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
 
@@ -86,5 +118,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--source", type=Path, default=Path("artifacts/candidate/hybrid_lr_model.npz"))
     parser.add_argument("--output", type=Path, default=Path(".tmp/runtime/model-package"))
+    parser.add_argument("--collaborative-index", type=Path)
     options = parser.parse_args()
-    build(options.source, options.output)
+    build(options.source, options.output, options.collaborative_index)
