@@ -2,7 +2,10 @@
 
 FoodMind ML is the offline model-development repository for FoodMind. It prepares data, engineers features, calculates collaborative signals, trains and evaluates the Logistic Regression acceptance model, and publishes a versioned model package for `foodmind-intelligence`.
 
-> **Current status:** directory framework only. No data pipeline, notebook, training script, evaluation, model artifact, or release automation has been implemented.
+> **Runtime status:** the local package includes the trained hybrid artifact.
+> UserCF and ItemCF are enabled only when an approved Backend training snapshot
+> has been converted to a verified collaborative index. Menu/catalogue data is
+> not user-interaction data and never enables collaborative filtering.
 
 ## Repository Role
 
@@ -177,6 +180,27 @@ An approved package should include:
 - SHA-256 checksums
 
 The package is consumed by the `foodmind-intelligence/inference-service`. See [model release process](docs/model-cards/model-release-process.md).
+
+### Collaborative-index handoff
+
+Export a time-bounded, HMAC-pseudonymised Backend snapshot, then build the
+index outside the serving stack:
+
+```powershell
+$env:PYTHONPATH = 'src'
+python scripts/build_collaborative_index.py `
+  --snapshot D:\secure-export\training-snapshot.ndjson `
+  --output D:\secure-release\collaborative-index.json
+python scripts/build_runtime_package.py `
+  --collaborative-index D:\secure-release\collaborative-index.json `
+  --output D:\secure-release\model-package
+```
+
+The index is positive-only: accepted recommendations, ratings of at least four,
+and `WOULD_EAT_AGAIN=true` can contribute; a rejection and passive
+non-selection cannot. The runtime checks both the index checksum and its source
+snapshot checksum metadata. Without the index, `userCf.available` and
+`itemCf.available` remain `false`.
 
 ## Experiment Rules
 

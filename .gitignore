@@ -5,6 +5,7 @@ data/processed/*.csv
 artifacts/candidate/
 *.pkl
 *.npz
+.tmp/
 __pycache__/
 *.pyc
 
