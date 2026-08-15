@@ -53,13 +53,15 @@ class RuntimePackageTest(unittest.TestCase):
             )
             index = root / "index.json"
             index.write_text(
-                json.dumps({
-                    "schemaVersion": "foodmind-collaborative-index-v1",
-                    "sourceSnapshotSha256": "a" * 64,
-                    "positiveOnly": True,
-                    "userCf": {},
-                    "itemCf": {},
-                }),
+                json.dumps(
+                    {
+                        "schemaVersion": "foodmind-collaborative-index-v1",
+                        "sourceSnapshotSha256": "a" * 64,
+                        "positiveOnly": True,
+                        "userCf": {},
+                        "itemCf": {},
+                    }
+                ),
                 encoding="utf-8",
             )
             output = root / "package"

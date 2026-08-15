@@ -5,12 +5,10 @@ from __future__ import annotations
 import csv
 import html
 import re
-import sys
 from datetime import date
 from pathlib import Path
 from typing import Any
 from urllib.request import Request, urlopen
-
 
 SOURCES = "data/external/menu_web_sources_found.csv"
 OUTPUT = "data/interim/public_web_menus_raw.csv"
@@ -183,8 +181,7 @@ def fixed_row(category: str, item: str, price: str, note: str = "fixed") -> dict
     }
 
 
-def extract_misstam_321(page_html: str, target_id: str) -> list[dict[str, str]]:
-    text = clean_text(page_html)
+def extract_misstam_321(_page_html: str, target_id: str) -> list[dict[str, str]]:
     if target_id == "T041":
         return [
             fixed_row("Toasties article menu mentions", "Italian Trio", "7.70"),
@@ -225,7 +222,9 @@ def extract_dfd_vons(_: str) -> list[dict[str, str]]:
 def extract_dfd_ramen(_: str) -> list[dict[str, str]]:
     return [
         fixed_row("Ramen Ichiro article menu mentions", "5-Pc Cha Shu Ramen Set with Gyoza and Houji Tea", "12.90"),
-        fixed_row("Ramen Ichiro article menu mentions", "Chicken Karaage Tsukemen Set with Gyoza and Houji Tea", "12.90"),
+        fixed_row(
+            "Ramen Ichiro article menu mentions", "Chicken Karaage Tsukemen Set with Gyoza and Houji Tea", "12.90"
+        ),
         fixed_row("Ramen Ichiro article menu mentions", "Cha Shu Ramen", "10.90"),
         fixed_row("Ramen Ichiro article menu mentions", "Yakibuta Pot Pie Tsukemen", "13.90"),
     ]
@@ -237,7 +236,9 @@ def extract_article_price_mentions(page_html: str) -> list[dict[str, str]]:
     seen = set()
     pattern = re.compile(r"([A-Z][A-Za-z0-9'’&/\- ]{4,90})\s*\((?:S)?\$(\d+(?:\.\d{1,2})?)\)")
     for match in pattern.finditer(text):
-        item = re.sub(r"^(There’s also the|The menu also features|Order the signature|Enjoy the)\s+", "", match.group(1).strip())
+        item = re.sub(
+            r"^(There’s also the|The menu also features|Order the signature|Enjoy the)\s+", "", match.group(1).strip()
+        )
         item = clean_text(item).strip(" -–,.;")
         if len(item) < 4:
             continue
@@ -259,7 +260,9 @@ def extract_foodpanda_indexed_fixed(target_id: str) -> list[dict[str, str]]:
             fixed_row("Signature Mains", "Beef Rendang", "17.68", "starting_price"),
             fixed_row("Signature Mains", "Bebek Penyet", "17.68", "starting_price"),
             fixed_row("Breakfast Delights", "Set A - Nasi Lemak W Chicken Wing", "9.18", "starting_price"),
-            fixed_row("Breakfast Delights", "Scrambled Egg with Chicken Luncheon Meat Sandwich", "15.13", "starting_price"),
+            fixed_row(
+                "Breakfast Delights", "Scrambled Egg with Chicken Luncheon Meat Sandwich", "15.13", "starting_price"
+            ),
             fixed_row("Breakfast Delights", "Big Breakfast", "15.98", "starting_price"),
             fixed_row("Fried Rice", "Fried Rice with Prawns", "11.73"),
             fixed_row("Fried Rice", "Fried Rice with Silverfish", "11.73"),
@@ -271,8 +274,18 @@ def extract_foodpanda_indexed_fixed(target_id: str) -> list[dict[str, str]]:
             fixed_row("Baked Rice", "Curry Chicken Baked Rice", "15.98", "starting_price"),
             fixed_row("Baked Rice", "Mushroom Baked Rice", "15.13", "starting_price"),
             fixed_row("Baked Rice", "Salmon Baked Rice", "17.68", "starting_price"),
-            fixed_row("Baked Cheesy Nasi Lemak", "Baked Cheesy Nasi Lemak with Grilled Spring Chicken", "17.68", "starting_price"),
-            fixed_row("Baked Cheesy Nasi Lemak", "Baked Cheesy Nasi Lemak with Shrimp Paste Chicken", "17.68", "starting_price"),
+            fixed_row(
+                "Baked Cheesy Nasi Lemak",
+                "Baked Cheesy Nasi Lemak with Grilled Spring Chicken",
+                "17.68",
+                "starting_price",
+            ),
+            fixed_row(
+                "Baked Cheesy Nasi Lemak",
+                "Baked Cheesy Nasi Lemak with Shrimp Paste Chicken",
+                "17.68",
+                "starting_price",
+            ),
             fixed_row("Sides", "Signature Truffle Fries with Parmesan Cheese", "11.73"),
             fixed_row("Sides", "Chicken Luncheon Fries", "11.73"),
             fixed_row("Sides", "French Fries", "10.88"),

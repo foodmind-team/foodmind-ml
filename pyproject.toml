@@ -1,0 +1,35 @@
+[project]
+name = "foodmind-ml"
+version = "0.1.0"
+description = "Offline model development and immutable model packaging for FoodMind"
+readme = "README.md"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "numpy>=2.5.2,<3.0",
+    "pandas>=3.0.5,<4.0",
+]
+
+[project.optional-dependencies]
+browser = ["playwright>=1.62.0,<2.0"]
+
+[build-system]
+requires = ["uv_build>=0.9.8,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1,<10.0",
+    "ruff>=0.16.3,<1.0",
+]
+
+[tool.pytest.ini_options]
+addopts = "--strict-config --strict-markers"
+pythonpath = [".", "src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "N", "PIE", "UP"]

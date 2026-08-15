@@ -24,7 +24,6 @@ from typing import Any
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
-
 ROOT = Path(__file__).resolve().parents[1]
 TARGETS_PATH = ROOT / "data/external/menu_search_targets_curated.csv"
 MENU_PATH = ROOT / "data/interim/restaurant_menu_collected.csv"
@@ -195,23 +194,48 @@ def classify_menu_item(category: str, name: str) -> tuple[str, str, str, str, st
     n = norm(name)
     joined = f"{c} {n}"
     tokens = set(joined.split())
-    is_drink = (
-        bool(tokens & {"drink", "drinks", "beverage", "beverages", "coffee", "tea", "latte", "soda", "lemonade", "juice", "water", "kopi", "teh", "milo"})
-        or any(phrase in joined for phrase in ("iced lemon tea", "soya milk", "grass jelly"))
-    )
-    savory_tokens = {"crab", "fish", "chicken", "beef", "salmon", "prawn", "seafood", "meat", "burger", "rice", "noodle", "spaghetti"}
+    is_drink = bool(
+        tokens
+        & {
+            "drink",
+            "drinks",
+            "beverage",
+            "beverages",
+            "coffee",
+            "tea",
+            "latte",
+            "soda",
+            "lemonade",
+            "juice",
+            "water",
+            "kopi",
+            "teh",
+            "milo",
+        }
+    ) or any(phrase in joined for phrase in ("iced lemon tea", "soya milk", "grass jelly"))
+    savory_tokens = {
+        "crab",
+        "fish",
+        "chicken",
+        "beef",
+        "salmon",
+        "prawn",
+        "seafood",
+        "meat",
+        "burger",
+        "rice",
+        "noodle",
+        "spaghetti",
+    }
     is_dessert = (
         bool(tokens & {"dessert", "desserts", "cake", "cakes", "brownie", "pudding", "gelato", "tart", "tarts"})
         or any(phrase in joined for phrase in ("ice cream", "snow ice", "ice kacang"))
     ) and not bool(tokens & savory_tokens)
     is_add_on = any(word in c for word in ("add on", "addon", "extra", "topping")) or n in {"sauce", "topping"}
-    is_side = any(word in joined for word in ("side", "fries", "garlic bread", "tater tots", "wings", "samosa", "springroll"))
-    is_main = (
-        not is_drink
-        and not is_dessert
-        and not is_add_on
-        and any(word in joined for word in MAIN_CATEGORY_HINTS)
+    is_side = any(
+        word in joined for word in ("side", "fries", "garlic bread", "tater tots", "wings", "samosa", "springroll")
     )
+    is_main = not is_drink and not is_dessert and not is_add_on and any(word in joined for word in MAIN_CATEGORY_HINTS)
     if is_drink:
         group = "drink"
     elif is_dessert:
@@ -224,7 +248,13 @@ def classify_menu_item(category: str, name: str) -> tuple[str, str, str, str, st
         group = "main_dish"
     else:
         group = "needs_review"
-    return str(is_main).lower(), str(is_drink).lower(), str(is_dessert).lower(), str(is_add_on or is_side).lower(), group
+    return (
+        str(is_main).lower(),
+        str(is_drink).lower(),
+        str(is_dessert).lower(),
+        str(is_add_on or is_side).lower(),
+        group,
+    )
 
 
 def canonical_menu_name(name: str) -> str:
@@ -321,7 +351,9 @@ def nea_exact_matches(targets: list[dict[str, str]], nea_rows: list[dict[str, st
     return matches
 
 
-def build_restaurants(targets: list[dict[str, str]], menu_rows: list[dict[str, str]], nea_rows: list[dict[str, str]]) -> list[dict[str, Any]]:
+def build_restaurants(
+    targets: list[dict[str, str]], menu_rows: list[dict[str, str]], nea_rows: list[dict[str, str]]
+) -> list[dict[str, Any]]:
     menu_by_restaurant = defaultdict(list)
     for row in menu_rows:
         menu_by_restaurant[row.get("restaurant_id", "")].append(row)
@@ -330,10 +362,16 @@ def build_restaurants(targets: list[dict[str, str]], menu_rows: list[dict[str, s
     for target in targets:
         rid = target["target_id"]
         rows = menu_by_restaurant.get(rid, [])
-        exact_rows = [row for row in rows if row.get("branch_match_status") in {"target_branch_match", "manual_user_provided_menu"}]
+        exact_rows = [
+            row
+            for row in rows
+            if row.get("branch_match_status") in {"target_branch_match", "manual_user_provided_menu"}
+        ]
         address = clean_text(target.get("address_hint") or "")
         if rows:
-            row_address_counts = Counter(clean_text(row.get("address")) for row in rows if clean_text(row.get("address")))
+            row_address_counts = Counter(
+                clean_text(row.get("address")) for row in rows if clean_text(row.get("address"))
+            )
             if row_address_counts and not address:
                 address = row_address_counts.most_common(1)[0][0]
         lat, lon, geocode_status = onemap_geocode(address or target.get("location_hint", ""))
@@ -414,7 +452,9 @@ def build_restaurant_menu(menu_rows: list[dict[str, str]], restaurants: list[dic
                 "source_url": row.get("source_url", ""),
                 "source_file": row.get("source_file", ""),
                 "collected_at": row.get("collected_at", ""),
-                "needs_manual_review": str(branch_status != "target_branch_match" and source != "manual_menu_image").lower(),
+                "needs_manual_review": str(
+                    branch_status != "target_branch_match" and source != "manual_menu_image"
+                ).lower(),
                 "notes": row.get("notes", ""),
             }
         )
@@ -461,22 +501,40 @@ def build_menu_dish_mapping(restaurant_menu: list[dict[str, Any]], dish_lookup: 
     return rows
 
 
-def build_quality_report(restaurants: list[dict[str, Any]], restaurant_menu: list[dict[str, Any]], mapping: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def build_quality_report(
+    restaurants: list[dict[str, Any]], restaurant_menu: list[dict[str, Any]], mapping: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
     menu_by_status = Counter(row["branch_match_status"] for row in restaurant_menu)
     menu_by_source = Counter(row["source"] for row in restaurant_menu)
     exact_restaurants = sum(1 for row in restaurants if row["has_exact_branch_menu"] == "true")
     matched_mappings = sum(1 for row in mapping if row["dish_id"])
     return [
         {"metric": "restaurants_total", "value": len(restaurants), "notes": "Targets in curated restaurant scope"},
-        {"metric": "restaurants_with_any_menu", "value": sum(1 for row in restaurants if int(row["menu_rows_total"]) > 0), "notes": ""},
+        {
+            "metric": "restaurants_with_any_menu",
+            "value": sum(1 for row in restaurants if int(row["menu_rows_total"]) > 0),
+            "notes": "",
+        },
         {"metric": "restaurants_with_exact_or_manual_menu", "value": exact_restaurants, "notes": ""},
         {"metric": "menu_rows_total", "value": len(restaurant_menu), "notes": ""},
-        {"metric": "menu_rows_main_dish", "value": sum(1 for row in restaurant_menu if row["category_group"] == "main_dish"), "notes": ""},
+        {
+            "metric": "menu_rows_main_dish",
+            "value": sum(1 for row in restaurant_menu if row["category_group"] == "main_dish"),
+            "notes": "",
+        },
         {"metric": "menu_rows_target_branch_match", "value": menu_by_status.get("target_branch_match", 0), "notes": ""},
         {"metric": "menu_rows_manual", "value": menu_by_status.get("manual_user_provided_menu", 0), "notes": ""},
-        {"metric": "menu_rows_public_reference", "value": menu_by_source.get("public_web_reference", 0), "notes": "Brand/reference menus need branch review"},
+        {
+            "metric": "menu_rows_public_reference",
+            "value": menu_by_source.get("public_web_reference", 0),
+            "notes": "Brand/reference menus need branch review",
+        },
         {"metric": "menu_dish_mapping_rows", "value": len(mapping), "notes": ""},
-        {"metric": "menu_dish_auto_matched", "value": matched_mappings, "notes": "Exact/alias matches only; fuzzy/LLM review not applied"},
+        {
+            "metric": "menu_dish_auto_matched",
+            "value": matched_mappings,
+            "notes": "Exact/alias matches only; fuzzy/LLM review not applied",
+        },
         {"metric": "generated_at", "value": date.today().isoformat(), "notes": ""},
     ]
 
@@ -498,7 +556,9 @@ def build_collection_backlog(restaurants: list[dict[str, Any]]) -> list[dict[str
         elif status == "foodpanda_brand_reference_only":
             priority = "high"
             missing_piece = "foodpanda_exact_branch_failed"
-            suggested_action = "Collect in-store menu photo/PDF or manually set Foodpanda address and verify returned outlet address"
+            suggested_action = (
+                "Collect in-store menu photo/PDF or manually set Foodpanda address and verify returned outlet address"
+            )
         else:
             priority = "high"
             missing_piece = "menu_rows"
@@ -519,7 +579,9 @@ def build_collection_backlog(restaurants: list[dict[str, Any]]) -> list[dict[str
             }
         )
     priority_order = {"high": 0, "medium": 1, "done": 2}
-    return sorted(rows, key=lambda item: (priority_order.get(item["priority"], 9), item["area"], item["restaurant_name"]))
+    return sorted(
+        rows, key=lambda item: (priority_order.get(item["priority"], 9), item["area"], item["restaurant_name"])
+    )
 
 
 def main() -> int:

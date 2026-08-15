@@ -10,7 +10,6 @@ from pathlib import Path
 
 import numpy as np
 
-
 RUNTIME_FEATURES = (
     "user_cf_score",
     "user_cf_available",

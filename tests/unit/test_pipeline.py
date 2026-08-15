@@ -6,8 +6,8 @@ import pandas as pd
 from foodmind_ml.pipeline import (
     NumpyLogisticRegression,
     add_user_preference_scores,
-    build_cf_scores,
     build_candidate_feature_frame,
+    build_cf_scores,
     build_user_preference_profiles,
     filter_restaurant_candidates,
     normalize_dish_name,
@@ -168,7 +168,14 @@ class PipelineTests(unittest.TestCase):
             ]
         ).set_index("dish_id")
         profiles = pd.DataFrame(
-            [{"user_id": "U1", "user_spicy_preference": 1.0, "user_sweet_preference": 0.0, "user_main_dish_preference": 1.0}]
+            [
+                {
+                    "user_id": "U1",
+                    "user_spicy_preference": 1.0,
+                    "user_sweet_preference": 0.0,
+                    "user_main_dish_preference": 1.0,
+                }
+            ]
         ).set_index("user_id")
         candidates = pd.DataFrame(
             [

@@ -5,7 +5,6 @@ from __future__ import annotations
 import csv
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 MAIN_PATH = ROOT / "data/interim/restaurant_menu_collected.csv"
 PUBLIC_PATH = ROOT / "data/interim/public_web_menus_raw.csv"
@@ -65,9 +64,8 @@ def main() -> int:
             note_parts.append(f"source_type={row['source_type']}")
         if row.get("notes"):
             note_parts.append(row["notes"])
-        is_exact_foodpanda_outlet = (
-            rid == "T026"
-            and "foodpanda.sg/restaurant/ch6o/syed-cafe-nuh" in (row.get("source_url") or "")
+        is_exact_foodpanda_outlet = rid == "T026" and "foodpanda.sg/restaurant/ch6o/syed-cafe-nuh" in (
+            row.get("source_url") or ""
         )
         added.append(
             {
@@ -86,7 +84,9 @@ def main() -> int:
                 "latitude": "",
                 "longitude": "",
                 "restaurant_rating": "",
-                "branch_match_status": "target_branch_match" if is_exact_foodpanda_outlet else "public_web_reference_needs_branch_review",
+                "branch_match_status": "target_branch_match"
+                if is_exact_foodpanda_outlet
+                else "public_web_reference_needs_branch_review",
                 "notes": "; ".join(note_parts),
             }
         )

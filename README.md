@@ -5,7 +5,9 @@ FoodMind ML is the offline model-development repository for FoodMind. It prepare
 > **Runtime status:** the local package includes the trained hybrid artifact.
 > UserCF and ItemCF are enabled only when an approved Backend training snapshot
 > has been converted to a verified collaborative index. Menu/catalogue data is
-> not user-interaction data and never enables collaborative filtering.
+> not user-interaction data and never enables collaborative filtering. The
+> model remains a project-stage candidate and must not be described as
+> production-validated.
 
 ## Repository Role
 
@@ -52,6 +54,7 @@ The handoff is a versioned model-package contract, not copied source code.
 
 ```text
 foodmind-ml/
+├── .github/workflows/ml-ci.yml
 ├── data/
 │   └── processed/
 ├── docs/
@@ -60,17 +63,13 @@ foodmind-ml/
 ├── reports/
 │   └── metrics/
 ├── scripts/
+├── pyproject.toml
 ├── src/foodmind_ml/
 │   ├── __init__.py
+│   ├── collaborative/
 │   └── pipeline.py
 └── tests/
     └── unit/
-```
-│   └── packaging/
-└── tests/
-    ├── unit/
-    ├── integration/
-    └── reproducibility/
 ```
 
 ## Model Design

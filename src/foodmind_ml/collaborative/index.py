@@ -12,7 +12,6 @@ import numpy as np
 
 from foodmind_ml.collaborative import ItemCF, UserCF
 
-
 INDEX_SCHEMA_VERSION = "foodmind-collaborative-index-v1"
 
 
@@ -65,15 +64,13 @@ def build_index(
                 continue
             assert user_cf is not None and item_cf is not None
             score, available = user_cf.score(user_i, meal_i)
-            neighbor_support = int(np.count_nonzero(
-                (matrix[:, meal_i] > 0) & (user_cf.user_similarity_[user_i, :] > 0)
-            ))
+            neighbor_support = int(
+                np.count_nonzero((matrix[:, meal_i] > 0) & (user_cf.user_similarity_[user_i, :] > 0))
+            )
             if available and neighbor_support >= min_neighbor_support:
                 user_entries[meal_key] = {"score": round(float(score), 8), "support": neighbor_support}
             item_score, item_available = item_cf.score(user_i, meal_i)
-            item_support = int(np.count_nonzero(
-                (matrix[user_i, :] > 0) & (item_cf.item_similarity_[meal_i, :] > 0)
-            ))
+            item_support = int(np.count_nonzero((matrix[user_i, :] > 0) & (item_cf.item_similarity_[meal_i, :] > 0)))
             if item_available and item_support >= min_item_support:
                 item_entries[meal_key] = {"score": round(float(item_score), 8), "support": item_support}
         if user_entries:

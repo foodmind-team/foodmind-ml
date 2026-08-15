@@ -18,7 +18,6 @@ from pathlib import Path
 from typing import Any
 from urllib.request import Request, urlopen
 
-
 BASE_URL = "https://fineder.sg"
 NEXT_DATA_RE = re.compile(
     r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>',
@@ -30,10 +29,7 @@ def fetch_homepage(url: str = BASE_URL) -> str:
     request = Request(
         url,
         headers={
-            "User-Agent": (
-                "FoodMind academic dataset collection; "
-                "contact via project owner; low-frequency request"
-            )
+            "User-Agent": ("FoodMind academic dataset collection; contact via project owner; low-frequency request")
         },
     )
     with urlopen(request, timeout=60) as response:

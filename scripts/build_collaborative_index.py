@@ -7,7 +7,6 @@ from pathlib import Path
 
 from foodmind_ml.collaborative.index import write_index
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--snapshot", type=Path, required=True)
