@@ -21,7 +21,11 @@ def main() -> int:
     for sarif_file in sarif_files:
         report = json.loads(sarif_file.read_text(encoding="utf-8"))
         for run in report.get("runs", []):
-            rules = {rule.get("id"): rule for rule in run.get("tool", {}).get("driver", {}).get("rules", []) if rule.get("id")}
+            rules = {
+                rule.get("id"): rule
+                for rule in run.get("tool", {}).get("driver", {}).get("rules", [])
+                if rule.get("id")
+            }
             for result in run.get("results", []):
                 rule_id = result.get("ruleId", "unknown-rule")
                 raw_score = rules.get(rule_id, {}).get("properties", {}).get("security-severity")
