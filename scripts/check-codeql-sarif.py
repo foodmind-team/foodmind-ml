@@ -7,7 +7,6 @@ import json
 import sys
 from pathlib import Path
 
-
 THRESHOLD = 4.0
 
 
