@@ -2,6 +2,10 @@
 
 FoodMind ML is FoodMind's offline model-development and packaging repository. It validates approved data snapshots, builds hybrid recommendation features, evaluates candidate models, and produces an immutable model package for FoodMind Intelligence.
 
+## Live deployment
+
+The user-facing FoodMind application is deployed at [https://13.229.2.154.sslip.io/](https://13.229.2.154.sslip.io/). This repository runs offline and does not expose a public endpoint; its approved model package is validated and consumed by the private Intelligence runtime.
+
 ## Scope
 
 This repository owns data preparation, collaborative-signal research, model training and evaluation, model cards, reproducible experiments, and model-package creation. It does not expose a public API, authenticate users, access the production database, or serve inference requests.
