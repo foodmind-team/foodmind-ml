@@ -42,6 +42,36 @@ uv run python scripts/build_runtime_package.py --output .tmp/runtime/model-packa
 
 This creates a local, generated package. Do not commit .tmp/.
 
+## Local deployment and runtime handoff
+
+This repository is an offline build and validation environment, not a public
+service. Build the model package before running the Intelligence repository
+independently; the integrated Infrastructure stack performs its own package
+build from the pinned ML source.
+
+On Windows PowerShell:
+
+```powershell
+git clone https://github.com/foodmind-team/foodmind-ml.git
+Set-Location foodmind-ml
+uv sync --frozen --dev
+uv run python scripts/build_runtime_package.py --output .tmp/runtime/model-package
+Get-ChildItem .tmp/runtime/model-package
+```
+
+The generated directory contains the validated manifest, model artifact, and
+checksums consumed by the private Inference service. For a standalone
+Intelligence checkout, keep this path at
+`foodmind-ml/.tmp/runtime/model-package` so its diagnostic Compose volume mount
+can read it. For normal end-to-end local development, use
+[FoodMind Infrastructure](https://github.com/foodmind-team/foodmind-infra)
+instead of publishing the package or opening an ML port.
+
+Use `uv run pytest -W error` and `uv pip check` before handing a package to a
+runtime. Remove generated local state only when it is no longer needed; `.tmp`
+is ignored and must never contain production data, credentials, or a model
+claimed to be production-approved without the release process.
+
 ## Model handoff
 
 ~~~text
