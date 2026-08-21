@@ -72,6 +72,26 @@ runtime. Remove generated local state only when it is no longer needed; `.tmp`
 is ignored and must never contain production data, credentials, or a model
 claimed to be production-approved without the release process.
 
+## Configuration and credentials
+
+ML has no runtime HTTP endpoint and no API-token configuration. Its normal
+local setup is the locked `uv` environment plus file paths supplied to the
+build scripts:
+
+```powershell
+uv run python scripts/build_runtime_package.py --output .tmp/runtime/model-package
+# Only for an approved, access-controlled training snapshot:
+uv run python scripts/build_collaborative_index.py `
+  --snapshot <approved-local-snapshot.ndjson> `
+  --output <local-collaborative-index.json>
+```
+
+Treat snapshot locations, approved-data access, and generated artifacts as
+local security boundaries. Do not add database credentials, Backend service
+tokens, provider API keys, or cloud access keys to this repository. Runtime
+tokens belong to Infra/Backend/Intelligence; ML hands over only a validated
+package with its manifest and checksums.
+
 ## Model handoff
 
 ~~~text
